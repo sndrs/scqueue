@@ -1,0 +1,105 @@
+body {
+  padding: 20px;
+}
+#scq-queue {
+  position: relative;
+}
+
+#scq-add {
+  position: absolute;
+  right: 0px;
+  top: -35px;
+}
+#scq-add-url {
+  border-radius: 4px;
+  padding: 4px 9px;
+  font-size: 14px;
+  width: 250px;
+  background: #fff;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid #cdcdcd;
+}
+#scq-add-message {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 10px;
+}
+
+#scq-queue ul {
+  list-style: none;
+  padding: 0;
+  margin: 0px 0 0;
+  border-top: solid #e5e5e5 1px;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  background-color: #fff;
+}
+.scq-track {
+  padding: 10px 0;
+  margin: 0;
+  border-bottom: solid #e5e5e5 1px;
+  position: relative;
+  padding-left: 0px;
+  background-color: #fff;
+  height: 60px;
+  padding-right: 37px;
+}
+
+.scq-track-play, .scq-track-skip {
+  display: none;  
+}
+.scq-track-play {
+  position: absolute;
+  left: 15px;
+  top: 25px;
+}
+.scq-track-grabber {
+  background-image: url(http://a1.sndcdn.com/images/move-icon.png);
+  height: 17px;
+  width: 17px;
+  position: absolute;
+  right: 8px;
+  top: 33px;
+  cursor: move;
+}
+.scq-track-not-streamable .scq-track-grabber, .scq-track-playing .scq-track-grabber {
+  display: none;
+}
+.scq-track-loaded .scq-track-play {
+  display: inline-block;
+}
+.scq-track-remove {
+  margin-top: 5px;
+}
+
+.scq-unstreamable-message {
+  display: none;
+  color: red;
+  font-size: 80%;
+  margin-left: 1ex;
+}
+.scq-track-not-streamable .scq-unstreamable-message {
+  display: inline-block;
+}
+@media only screen and (max-width : 480px) {
+  h1 {
+    font-size: 200%
+  }
+  #scq-add {
+    left: 0px;
+    top: 10px;
+  }
+  #scq-add-url {
+    width: 150px
+  }
+  #scq-add-message {
+    top: 60px;
+  }
+  #scq-queue ul {
+    top: 50px;
+  }
+}

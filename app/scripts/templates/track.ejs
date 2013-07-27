@@ -1,0 +1,20 @@
+<li data-scq-track_id="<%= id %>" class="scq-track <%= function(){if(!streamable){return 'scq-track-not-streamable'}}() %>"> 
+  <div class="scq-track-grabber"></div>      
+  <button class="scq-track-play sc-button sc-button-large sc-button-play">play</button>
+  <a href="<%= user.permalink_url %>" class="soundBadge__avatarLink sc-media-image">
+    <img src="<%= artwork_url %>" width="60" height="60" alt="Empress Of - Tristeza">
+  </a> 
+  <div class="scq-track-info sc-media-content soundBadge__content">
+    <div class="soundTitle sc-clearfix sc-hyphenate sc-type-h3 single">
+      <div class="sc-type-light sc-truncate"> 
+        <a href="<%= user.permalink_url %>" class="soundTitle__username sc-link-light"><%= user.username %></a> 
+      </div>  
+      <div class="sc-media-content">
+        <a class="soundTitle__title sc-link-dark sc-truncate" href="<%= permalink_url %>" title="Empress Of - Tristeza"><%= title %></a>
+      </div> 
+    </div>
+    <button class="scq-track-remove sc-button sc-button-small sc-button-icon sc-button-delete">delete</button>
+    <p class="scq-unstreamable-message">This track cannot be streamed from here, but you can listen to it on <a href="<%= permalink_url %>">SoundCloud</a>.</p>
+    <!-- <button class="scq-play sc-button sc-button-play">play</button> -->
+  </div>
+</li>

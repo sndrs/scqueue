@@ -1,0 +1,24 @@
+<script>
+  window.store = function(){
+    SC.initialize({client_id:'19a6da49de97a8bffc737fb8cb1a1858'});
+
+    var key = 'SCQueue.tracks';
+    var url = location.toString().split('url=')[1];
+    console.log(localStorage.getItem(key));
+
+    SC.get('/resolve?url=' + url, function(response, error) {
+      if (error) {
+        alert('Unable to add the track — is this a page on SoundCloud?');
+      } else {
+        var tracks = JSON.parse(localStorage.getItem(key));
+        tracks.push(response);
+        localStorage.setItem(key, JSON.stringify(tracks));
+        document.body.innerHTML += "<br><br>'" + response.title + "' has been added to your queue.";
+      }
+      document.body.innerHTML += "<br><br>This window will self-destruct in 2 seconds...";
+      setTimeout(function(){window.close()}, 2000);
+    });
+  };
+</script>
+<script src="//connect.soundcloud.com/sdk.js" onload="store()"></script>
+Sorry about opening this window - if I had a secure host I could insert an iframe...
