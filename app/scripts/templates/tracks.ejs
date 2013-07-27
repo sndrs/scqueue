@@ -4,8 +4,8 @@
 <div id="scq-add-message">
   <p>Using this SoundCloud Queue, you can queue up and play tracks from all over <a href="http://soundcloud.com">SoundCloud</a>.</p>
   <p>Add tracks by entering their URLs at the top.</p>
-  <p>Drag the following link to your bookmarks to add tracks to your queue directly from a page on SoundCloud: <a href="javascript:window.open('http:localhost:9000/bookmarklet.html?url='+location, '_blank')">SCQ page</a> or 
-    <a href="javascript:(function(){var url=document.querySelector('.playbackTitle').href;if(url != ''){window.open('http:localhost:9000/bookmarklet.html?url='+url, '_blank');}})()">SCQ now playing</a></p>
+  <p>Drag the following link to your bookmarks to add tracks to your queue directly from a page on SoundCloud: <a href="javascript:window.open('http://sndrs.github.io/scqueue/bookmarklet.html?url='+location, '_blank')">SCQ page</a> or 
+    <a href="javascript:(function(){var url=document.querySelector('.playbackTitle').href;if(url != ''){window.open('http://sndrs.github.io/scqueue/bookmarklet.html?url='+url, '_blank');}})()">SCQ now playing</a></p>
 </div>
 <ul id="scq-queue-tracks">
 <% _(obj).each(function(track){ %>
