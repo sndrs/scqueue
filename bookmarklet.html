@@ -8,9 +8,9 @@
 
     function addTrack(track){
       var tracks = JSON.parse(localStorage.getItem(key)) || [];
-      tracks.push(response);
+      tracks.push(track);
       localStorage.setItem(key, JSON.stringify(tracks));
-      document.body.innerHTML += "<br><br>'" + response.title + "' has been added to your queue.";
+      document.body.innerHTML += "<br><br>'" + track.title + "' has been added to your queue.";
     }
 
     SC.get('/resolve?url=' + url, function(response, error) {
