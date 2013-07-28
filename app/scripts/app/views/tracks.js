@@ -126,6 +126,7 @@ define(function(require) {
     },
 
     // start and stop audio playback.
+    // Doesn't handle tracks which have been marked as unstreamable in app since being added the queue, which it should...
     togglePlayback: function() {
       if (this.nowPlaying !== null) {
         this.$('.scq-track-loaded').toggleClass('scq-track-playing')
@@ -142,7 +143,6 @@ define(function(require) {
     },
 
     finishPlayback: function() {
-      console.log('finished');
       this.$('.scq-track-loaded').remove();
       this.collection.removeTrack(this.collection.first(), {silent: true});
       this.loadFirstTrack({
