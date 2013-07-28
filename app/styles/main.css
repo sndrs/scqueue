@@ -1,41 +1,50 @@
 body {
   padding: 20px;
+  margin: 0;
 }
 #scq-queue {
   position: relative;
+  border-top: solid #e5e5e5 1px;
+  width: 100%;
 }
 
+
 #scq-add {
-  position: absolute;
-  right: 0px;
-  top: -35px;
+  margin-top: 10px;
+  border-bottom: solid #e5e5e5 1px;
+  padding-bottom: 10px;
+  width: 100%;
+  height: 27px;
+  position: relative;
 }
 #scq-add-url {
+  position: absolute;
+  display: inline-block;
+  left: 0px;
+  right: 130px;
+  width: auto;
   border-radius: 4px;
   padding: 4px 9px;
   font-size: 14px;
-  width: 250px;
   background: #fff;
   outline: none;
   cursor: pointer;
   border: 1px solid #cdcdcd;
 }
-#scq-add-message {
+#scq-add_track {
   position: absolute;
-  left: 0px;
   right: 0px;
-  top: 10px;
+}
+
+#scq-add-message {
+  margin-top: 10px;
+  font-size: 80%;
 }
 
 #scq-queue ul {
   list-style: none;
   padding: 0;
   margin: 0px 0 0;
-  border-top: solid #e5e5e5 1px;
-  position: absolute;
-  left: 0px;
-  right: 0px;
-  top: 0px;
   background-color: #fff;
 }
 .scq-track {
@@ -88,18 +97,5 @@ body {
 @media only screen and (max-width : 480px) {
   h1 {
     font-size: 200%
-  }
-  #scq-add {
-    left: 0px;
-    top: 10px;
-  }
-  #scq-add-url {
-    width: 150px
-  }
-  #scq-add-message {
-    top: 60px;
-  }
-  #scq-queue ul {
-    top: 50px;
   }
 }

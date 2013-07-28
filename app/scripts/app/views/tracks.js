@@ -29,8 +29,7 @@ define(function(require) {
 
     render: function() {
       // render the queue
-      this.$el.html(this.template(this.collection.toJSON()));
-      this.$('#scq-queue-tracks').sortable({
+      this.$('#scq-queue-tracks').html(this.template(this.collection.toJSON())).sortable({
         handle: '.scq-track-grabber',
         axis: 'y',
         opacity: 0.5,
