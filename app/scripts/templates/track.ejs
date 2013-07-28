@@ -1,4 +1,4 @@
-<li data-scq-track_id="<%= id %>" class="scq-track <%= function(){if(!streamable){return 'scq-track-not-streamable'}}() %>"> 
+<li data-scq-track_id="<%= id %>" class="scq-track <%= streamable ? '' : 'scq-track-not-streamable' %>"> 
   <div class="scq-track-grabber"></div>      
   <button class="scq-track-play sc-button sc-button-large sc-button-play">play</button>
   <a href="<%= permalink_url %>" class="soundBadge__avatarLink sc-media-image">
