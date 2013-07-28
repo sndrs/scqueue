@@ -10,7 +10,7 @@
       if (error) {
         alert('Unable to add the track — is this a page on SoundCloud?');
       } else {
-        var tracks = JSON.parse(localStorage.getItem(key)) || [];
+        var tracks = JSON.parse(localStorage.getItem(key));
         tracks.push(response);
         localStorage.setItem(key, JSON.stringify(tracks));
         document.body.innerHTML += "<br><br>'" + response.title + "' has been added to your queue.";
