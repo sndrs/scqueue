@@ -1,11 +1,9 @@
 /*global describe, it */
 'use strict';
 (function () {
-    describe('Give it some context', function () {
-        describe('maybe a bit more context here', function () {
-            it('should run here few assertions', function () {
-
-            });
+    describe('My SoundCloud Queue player', function () {
+        it('should have tests', function () {
+          expect(tests).to.exist;
         });
     });
 })();

@@ -69,18 +69,18 @@ module.exports = function (grunt) {
                     }
                 }
             },
-            // test: {
-            //     options: {
-            //         port: 9001,
-            //         middleware: function (connect) {
-            //             return [
-            //                 mountFolder(connect, '.tmp'),
-            //                 mountFolder(connect, 'test'),
-            //                 mountFolder(connect, yeomanConfig.app)
-            //             ];
-            //         }
-            //     }
-            // },
+            test: {
+                options: {
+                    port: 9001,
+                    middleware: function (connect) {
+                        return [
+                            mountFolder(connect, '.tmp'),
+                            mountFolder(connect, 'test'),
+                            mountFolder(connect, yeomanConfig.app)
+                        ];
+                    }
+                }
+            },
             dist: {
                 options: {
                     middleware: function (connect) {
