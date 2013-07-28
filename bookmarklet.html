@@ -6,14 +6,28 @@
     var url = location.toString().split('url=')[1];
     console.log(localStorage.getItem(key));
 
+    function addTrack(track){
+      var tracks = JSON.parse(localStorage.getItem(key)) || [];
+      tracks.push(response);
+      localStorage.setItem(key, JSON.stringify(tracks));
+      document.body.innerHTML += "<br><br>'" + response.title + "' has been added to your queue.";
+    }
+
     SC.get('/resolve?url=' + url, function(response, error) {
       if (error) {
-        alert('Unable to add the track — is this a page on SoundCloud?');
+        alert('Unable to add the track — is this a SoundCloud track URL?');
       } else {
-        var tracks = JSON.parse(localStorage.getItem(key)) || [];
-        tracks.push(response);
-        localStorage.setItem(key, JSON.stringify(tracks));
-        document.body.innerHTML += "<br><br>'" + response.title + "' has been added to your queue.";
+        // If this is track, add it.
+        if(response.kind === 'track'){
+          addTrack(response);
+        } else if (response.tracks){
+          // If it has an array of tracks, add them.
+          response.tracks.forEach(function(track){
+            addTrack(track);
+          }.bind(this))
+        } else {
+          alert('Unable to add the track — is this a SoundCloud track URL?');
+        };
       }
       document.body.innerHTML += "<br><br>This window will self-destruct in 2 seconds...";
       setTimeout(function(){window.close()}, 2000);
