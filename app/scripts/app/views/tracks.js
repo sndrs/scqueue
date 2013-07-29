@@ -126,7 +126,7 @@ define(function(require) {
     },
 
     // start and stop audio playback.
-    // Doesn't handle tracks which have been marked as unstreamable in apps since being added the queue, which it should...
+    // Doesn't error handle e.g. tracks which have been marked as unstreamable in apps since being added to the queue, which it should...
     togglePlayback: function() {
       if (this.nowPlaying !== null) {
         this.$('.scq-track-loaded').toggleClass('scq-track-playing')
